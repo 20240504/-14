@@ -5864,6 +5864,7 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/breeze",
             "version": "v1.29.1",
             "source": {
@@ -5926,6 +5927,8 @@
             "time": "2024-03-04T14:35:21+00:00"
         },
         {
+=======
+>>>>>>> 3464631 (first commit)
             "name": "laravel/pint",
             "version": "v1.16.0",
             "source": {

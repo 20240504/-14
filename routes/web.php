@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\ProfileController;
+=======
+>>>>>>> 3464631 (first commit)
 use Illuminate\Support\Facades\Route;
 
 /*
