@@ -14,12 +14,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
+        \URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS','on');
         Paginator::useBootstrap();//
     }
 }
