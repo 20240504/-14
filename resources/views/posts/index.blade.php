@@ -6,25 +6,30 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body class="anitaliased">
         <h1>Blog Name</h1>
         <a href="/posts/create">create</a>
         <div class='posts'>
+            <div class="grid grid-cols-2 gap-4 content-evenly">
             @foreach($posts as $post)
-                <div class=$post>
-                    <h2 class='title'>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-gray">
+                    <div class="flex justify-center items-center gap-4">
                         <a href="/posts/{{$post->id}}">{{$post->title}}</a>
-                    </h2>
-                    <p class='body'>{{$post->body}}</p>
-                </div>
-                <p class='body'>{{$post->body}}</p>
+                        <p class='body'>/{{$post->body}}</p>
+                    </div>
+                    <div>都道府県：{{$post->prefecture->name}}</div>
+                    <div>{{$post->category->name}}</div>
+                    <div>活動場所：{{$post->place}}</div>
                 <!-- 以下を追記 -->
                 <form action="/posts/{{$post->id}}" id="form_{{$post->id}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="button" onclick="deletePost({{$post->id}})">delete</button>
                 </form>
+            </div>
             @endforeach
+            </div>
         </div>
         <div class="paginate">
             {{$posts ->links()}}
@@ -39,4 +44,5 @@
             }
         </script>
     </body>
+    </x-app-layout>
 </html>

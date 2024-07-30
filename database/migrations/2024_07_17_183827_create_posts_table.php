@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('category_id')->references('id')->on('categories');
-            $table->foreignId('preffecture_id')->references('id')->on('prefectures');
+            $table->foreignId('prefecture_id')->references('id')->on('prefectures');
             $table->foreignId('university_id')->references('id')->on('universities');
             $table->string('title');
             $table->string('body');
             $table->string('place');
+            $table->text('image_url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
